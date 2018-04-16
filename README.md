@@ -11,7 +11,7 @@ Ready:Wait(workspace, 10)
 
 Ready:Connect(workspace, function(LastToLoad)
   print("Workspace has been fully loaded - the last instance to load was", LastToLoad)
-end, 10)
+end)
 ```
 
 # API
