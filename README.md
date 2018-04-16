@@ -2,7 +2,8 @@
 A way to wait until an object has been fully loaded. Not a perfect way, mind you, but at the moment there is no perfect way.
 
 # Usage
-There is a single config variable in the module called `TIMEOUT`. This is default number of seconds the script will wait where no descendants have been added to deem the object loaded.
+
+Example code:
 
 ```lua
 local Ready = require(script.Ready)
@@ -13,6 +14,10 @@ Ready:Connect(workspace, function(LastToLoad)
   print("Workspace has been fully loaded - the last instance to load was", LastToLoad)
 end)
 ```
+
+There is a single config variable in the module called `TIMEOUT`. This is default number of seconds the script will wait where no descendants have been added to deem the object loaded.
+
+The timeout value that gets used is essentially the minimum amount of time possible for an object to be fully loaded. This means that if the timeout is set to 1 (second), it will always take at least 1 second for an object to load.
 
 # API
 ### *void* Ready:Wait(*instance* Object [, *number* Timeout])
