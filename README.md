@@ -1,5 +1,5 @@
 # RbxReady
-A way to wait until an object has been fully loaded. Not a perfect way, mind you, but at the moment there is no perfect way.
+A way to wait until an object has been fully loaded. This is still imperfect, but it seems to be the best option if you want this kind of functionality.
 
 # Usage
 
@@ -15,7 +15,7 @@ Ready:Connect(workspace, function(LastToLoad)
 end)
 ```
 
-There is a single config variable in the module called `TIMEOUT`. This is default number of seconds the script will wait where no descendants have been added to deem the object loaded.
+There is a single config variable in the module called `TIMEOUT`. This is the default number of seconds the script will wait where no descendants have been added to deem the object loaded.
 
 The timeout value that gets used is essentially the minimum amount of time possible for an object to be fully loaded. This means that if the timeout is set to 1 (second), it will always take at least 1 second for an object to load.
 
