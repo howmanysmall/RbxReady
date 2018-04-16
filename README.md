@@ -10,7 +10,7 @@ local Ready = require(script.Ready)
 Ready:Wait(workspace, 10)
 
 Ready:Connect(workspace, function(LastToLoad)
-  print("Workspace has been fully loaded - the last instance to load was " ..LastToLoad)
+  print("Workspace has been fully loaded - the last instance to load was", LastToLoad)
 end, 10)
 ```
 
