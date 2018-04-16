@@ -6,7 +6,9 @@ local TIMEOUT = 1 -- Length of time where no descendants have been added to cons
 
 local Ready = {}
 
-function Ready:Wait(Object)
+function Ready:Wait(Object, Timeout)
+	if not Timeout then Timeout = TIMEOUT end		
+	
 	local Timestamp = tick()
 
 	Object.DescendantAdded:Connect(function()
@@ -16,11 +18,13 @@ function Ready:Wait(Object)
 	repeat wait() until (tick() - Timestamp) > TIMEOUT
 end
 
-function Ready:Connect(Object, Function)
+function Ready:Connect(Object, Function, Timeout)
+	if not Timeout then Timeout = TIMEOUT end	
+	
 	local Timestamp = tick()
 	local Connection
 
-	Connection = Object.DescendantAdded:Connect(function(Descendant)
+	local function LogDescendant(Descendant)
 		local LocalTimestamp = tick()
 		Timestamp = LocalTimestamp
 		
@@ -29,7 +33,12 @@ function Ready:Connect(Object, Function)
 			Connection:Disconnect()
 			Function(Descendant)			
 		end
-	end)
+	end
+
+	coroutine.wrap(LogDescendant)()
+	Connection = Object.DescendantAdded:Connect(LogDescendant)
+	
+	return Connection
 end
 
 return Ready
