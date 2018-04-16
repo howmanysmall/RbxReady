@@ -15,11 +15,11 @@ end, 10)
 ```
 
 # API
-### *void* Ready:Wait(*instance* Object, [*number* Timeout])
+### *void* Ready:Wait(*instance* Object [, *number* Timeout])
 
 Repeatedly calls `wait()` until the timeout has been reached and no descendants of the `Object` were added in that time.
 
-### *RBXScriptConnection* Ready:Connect(*instance* Object, *function* Callback, [*number* Timeout])
+### *RBXScriptConnection* Ready:Connect(*instance* Object, *function* Callback [, *number* Timeout])
 
 Completes the timeout after every time a descendant of `Object` was added, then calls `Callback` if no other descendants had been added in the wait time. Returns a `RBXScriptConnection` which can be disconnected at any time, and is disconnected after the object has loaded.
 
