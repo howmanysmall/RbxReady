@@ -1,8 +1,8 @@
 local DEFAULT_TIMEOUT = 1 -- Length of time where no descendants have been added to consider the object loaded
 
--- Author: EmeraldSlash
--- Repository: https://github.com/EmeraldSlash/RbxReady
--- Last Updated: 04/19/2018
+-- @author EmeraldSlash
+-- @repository https://github.com/EmeraldSlash/RbxReady
+-- @rostrap Can be loaded using the Rostrap library manager
 
 local Ready = {}
 
