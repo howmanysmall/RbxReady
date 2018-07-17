@@ -2,7 +2,6 @@ local DEFAULT_TIMEOUT = 1 -- Length of time where no descendants have been added
 
 -- @author EmeraldSlash
 -- @repository https://github.com/EmeraldSlash/RbxReady
--- @rostrap Can be loaded using the Rostrap library manager
 
 local Ready = {}
 
